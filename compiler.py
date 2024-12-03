@@ -136,13 +136,13 @@ def parse(tokens):
 
     def error(message):
         errors.append(f"Error at token index {index}: {message}")
-        print(f"Error at token index {index}: {message}")
+        ##print(f"Error at token index {index}: {message}")
 
     while stack:
         top = stack.pop()
         token_type = get_token_type(current_token)
         # Debugging output
-        print(f"Stack: {stack}, Current Token: '{current_token}', Token Type: '{token_type}'")
+        ##print(f"Stack: {stack}, Current Token: '{current_token}', Token Type: '{token_type}'")
 
         if token_type == 'Invalid':
             error(f"Invalid token: '{current_token}'")
@@ -206,7 +206,25 @@ def parse(tokens):
     else:
         return "Ready to compile"
 
-file_path = "final24.txt"
-tokens = tokenize_blocked_text(file_path)
-result = parse(tokens)
-print(result)
+def test_parser(files):
+    for file_path in files:
+        print("\nTesting the parser with the " + file_path + " file \n")
+        tokens = tokenize_blocked_text(file_path)
+        result = parse(tokens)
+        print(result)
+
+files = {"tests/final24.txt", 
+        "tests/programError.txt", 
+        "tests/varError.txt", 
+        "tests/integerError.txt", 
+        "tests/beginError.txt", 
+        "tests/endError.txt", 
+        "tests/printError.txt", 
+        "tests/semicolonError.txt", 
+        "tests/commaError.txt", 
+        "tests/colonError.txt", 
+        "tests/leftParenthesesError.txt", 
+        "tests/rightParenthesesError.txt"}
+
+test_parser(files)
+
