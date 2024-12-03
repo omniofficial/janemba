@@ -14,6 +14,7 @@ ERROR_MESSAGES = {
     '(': '( The left parentheses is missing',
     ')': ') The right parentheses is missing',
     '=': '= is expected',
+    '.': '. is expected',
 }
 
 # Tokenizer for blocked text format
@@ -30,17 +31,17 @@ FIRST = {
     'Program': {'program'},
     'Declarations': {'var'},
     'IdentifierList': {'Identifier'},
-    'IdentifierList\'': {',', 'ε'},
+    'IdentifierList\'': {',', 'λ'},
     'Statements': {'Identifier', 'print'},
-    'Statements\'': {'Identifier', 'print', 'ε'},
+    'Statements\'': {'Identifier', 'print', 'λ'},
     'Statement': {'Identifier', 'print'},
     'Assignment': {'Identifier'},
     'Write': {'print'},
     'PrintList': {'String', 'Identifier'},
     'Expression': {'(', 'Identifier', 'Number'},
-    'Expression\'': {'+', '-', 'ε'},
+    'Expression\'': {'+', '-', 'λ'},
     'Term': {'(', 'Identifier', 'Number'},
-    'Term\'': {'*', '/', 'ε'},
+    'Term\'': {'*', '/', 'λ'},
     'Factor': {'(', 'Identifier', 'Number'},
 }
 
@@ -62,7 +63,6 @@ FOLLOW = {
     'Factor': {'*', '/', '+', '-', ';', ')'},
 }
 
-# Non-terminals and terminals
 NON_TERMINALS = [
     'Program', 'Declarations', 'IdentifierList', 'IdentifierList\'',
     'Statements', 'Statements\'', 'Statement', 'Assignment', 'Write',
@@ -74,18 +74,17 @@ TERMINALS = [
     '=', 'print', '(', ')', 'Number', '+', '-', '*', '/', ',', 'String', '$'
 ]
 
-# Parsing table with updated entries
 PARSING_TABLE = {
     ('Program', 'program'): ['program', 'Identifier', ';', 'Declarations', 'begin', 'Statements', 'end'],
     ('Declarations', 'var'): ['var', 'IdentifierList', ':', 'integer', ';'],
     ('IdentifierList', 'Identifier'): ['Identifier', 'IdentifierList\''],
     ('IdentifierList\'', ','): [',', 'Identifier', 'IdentifierList\''],
-    ('IdentifierList\'', ':'): ['ε'],
+    ('IdentifierList\'', ':'): ['λ'],
     ('Statements', 'Identifier'): ['Statement', 'Statements\''],
     ('Statements', 'print'): ['Statement', 'Statements\''],
     ('Statements\'', 'Identifier'): ['Statement', 'Statements\''],
     ('Statements\'', 'print'): ['Statement', 'Statements\''],
-    ('Statements\'', 'end'): ['ε'],
+    ('Statements\'', 'end'): ['λ'],
     ('Statement', 'Identifier'): ['Assignment', ';'],
     ('Statement', 'print'): ['Write', ';'],
     ('Assignment', 'Identifier'): ['Identifier', '=', 'Expression'],
@@ -97,19 +96,19 @@ PARSING_TABLE = {
     ('Expression', '('): ['Term', 'Expression\''],
     ('Expression\'', '+'): ['+', 'Term', 'Expression\''],
     ('Expression\'', '-'): ['-', 'Term', 'Expression\''],
-    ('Expression\'', ')'): ['ε'],
-    ('Expression\'', ';'): ['ε'],
-    ('Expression\'', ','): ['ε'],
+    ('Expression\'', ')'): ['λ'],
+    ('Expression\'', ';'): ['λ'],
+    ('Expression\'', ','): ['λ'],
     ('Term', 'Identifier'): ['Factor', 'Term\''],
     ('Term', 'Number'): ['Factor', 'Term\''],
     ('Term', '('): ['Factor', 'Term\''],
     ('Term\'', '*'): ['*', 'Factor', 'Term\''],
     ('Term\'', '/'): ['/', 'Factor', 'Term\''],
-    ('Term\'', '+'): ['ε'],
-    ('Term\'', '-'): ['ε'],
-    ('Term\'', ')'): ['ε'],
-    ('Term\'', ';'): ['ε'],
-    ('Term\'', ','): ['ε'],
+    ('Term\'', '+'): ['λ'],
+    ('Term\'', '-'): ['λ'],
+    ('Term\'', ')'): ['λ'],
+    ('Term\'', ';'): ['λ'],
+    ('Term\'', ','): ['λ'],
     ('Factor', 'Identifier'): ['Identifier'],
     ('Factor', 'Number'): ['Number'],
     ('Factor', '('): ['(', 'Expression', ')'],
@@ -182,10 +181,10 @@ def parse(tokens):
             key = (top, token_type)
             if key in PARSING_TABLE:
                 production = PARSING_TABLE[key]
-                if production != ['ε']:
+                if production != ['λ']:
                     stack.extend(reversed(production))
             else:
-                expected_tokens = FIRST[top] - {'ε'}
+                expected_tokens = FIRST[top] - {'λ'}
                 error(f"Syntax error: Expected one of {expected_tokens}, but found '{current_token}' when parsing {top}")
                 # Error recovery: skip tokens until one from FOLLOW[top] is found
                 while current_token not in FOLLOW[top] and current_token != '$':
