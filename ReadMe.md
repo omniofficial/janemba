@@ -14,14 +14,14 @@ This is a top down compiler written in Python. This was developed by Henry Dinh,
 
 -   Part 2 [COMPLETE]
 
-    - Translate the given text file into a programming language (Python) [Y]
+    -   Translate the given text file into a programming language (Python) [Y]
 
 -   Part 3 [IN PROGRESS]
 
-    - Create program to check provided grammar.
+    -   Create program to check provided grammar.
 
 -   Part 4 [IN PROGRESS]
 
-    -  Add additional functionality to display error messages if given grammar does not compile.
+    -   Add additional functionality to display error messages if given grammar does not compile.
 
 -   Part 5 [IN PROGRESS]
