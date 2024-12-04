@@ -1,6 +1,6 @@
 program f2024 ;
 var
-a , b2a , c , bba : integer ;
+a b2a , c , bba : integer ;
 begin
 a = 3 ;
 b2a = 14 ;

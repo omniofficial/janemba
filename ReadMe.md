@@ -16,12 +16,12 @@ This is a top down compiler written in Python. This was developed by Henry Dinh,
 
     -   Translate the given text file into a programming language (Python) [Y]
 
--   Part 3 [IN PROGRESS]
+-   Part 3 [COMPLETE]
 
-    -   Create program to check provided grammar.
+    - Create program to check provided grammar. [Y]
 
 -   Part 4 [IN PROGRESS]
 
-    -   Add additional functionality to display error messages if given grammar does not compile.
+    -  Add additional functionality to display error messages if given grammar does not compile. [IP]
 
 -   Part 5 [IN PROGRESS]

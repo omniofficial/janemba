@@ -1,5 +1,4 @@
 program f2024 ;
-var
 a , b2a , c , bba : integer ;
 begin
 a = 3 ;

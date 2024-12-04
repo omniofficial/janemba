@@ -5,7 +5,7 @@ begin
 a = 3 ;
 b2a = 14 ;
 c = 5 ;
-print ( c ) ;
+print c ) ;
 bba = a * ( b2a + 2 * c ) ;
 print ( “value=” , bba ) ;
 end

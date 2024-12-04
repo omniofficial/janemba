@@ -1,7 +1,7 @@
 program f2024 ;
 var
 a , b2a , c , bba : integer ;
-begin
+beg
 a = 3 ;
 b2a = 14 ;
 c = 5 ;
