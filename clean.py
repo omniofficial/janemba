@@ -1,3 +1,5 @@
+# PART 1 - Removes comments, extra spaces, and tokenize strings, alpahumeric words, single non-whitespace characters. Copies content into "final24.txt".
+
 import re
 
 def remove_comments(lines):
@@ -25,6 +27,7 @@ def remove_comments(lines):
             new_lines.append(processed_line)
     return new_lines
 
+# LEXER
 def tokenize_line(line):
     # Pattern to match strings (using “ and ”), identifiers, numbers, and single non-space characters
     pattern = r'“[^”]*”|[\w]+|[^\s\w]'
