@@ -280,4 +280,3 @@ files = {"tests/final24.txt",
         "tests/rightParenthesesError.txt"}
 
 test_parser(files)
-
