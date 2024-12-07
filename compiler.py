@@ -25,39 +25,25 @@ print_janemba()
 
 
 RESERVED_WORDS = {"program", "var", "begin", "end", "integer", "print"}
+
+# WITHOUT HARDCODED EXPECTED:
 ERROR_MESSAGES = {
-    'program': "\033[31mThe \033[97m'program'\033[31m keyword is expected at the beginning of the program block, signifying the start of the program structure. Ensure the program starts with the \033[97m'program'\033[31m keyword. Expected \033[97m'program'\033[31m\033[0m",
-    'var': "\033[31mThe \033[97m'var'\033[31m keyword is missing, which is required to start the variable declaration section. Ensure \033[97m'var'\033[31m is used to declare variables. Expected \033[97m'var'\033[31m\033[0m",
-    'begin': "\033[31mThe \033[97m'begin'\033[31m keyword is missing, which marks the start of the execution block following the declarations. Ensure the execution section starts with \033[97m'begin'\033[31m. Expected \033[97m'begin'\033[31m\033[0m",
-    'end': "\033[31mThe \033[97m'end'\033[31m keyword is missing, indicating the termination of the program. Ensure \033[97m'end'\033[31m is used to close the program block. Expected \033[97m'end'\033[31m\033[0m",
-    'integer': "\033[31mThe \033[97m'integer'\033[31m keyword is required to specify the data type of the variables being declared. Ensure variables are typed as \033[97m'integer'\033[31m. Expected \033[97m'integer'\033[31m\033[0m",
-    'print': "\033[31mThe \033[97m'print'\033[31m statement is required to output data to the console. Ensure \033[97m'print'\033[31m is used to display values. Expected \033[97m'print'\033[31m\033[0m",
-    ';': "\033[31mA semicolon \033[97m';'\033[31m is expected to terminate the statement. Ensure every statement ends with a semicolon. Expected \033[97m';'\033[31m\033[0m",
-    ',': "\033[31mA comma \033[97m','\033[31m is missing to separate multiple identifiers in a list. Ensure that identifiers are separated by commas in the declaration. Expected \033[97m','\033[31m\033[0m",
-    ':': "\033[31mA colon \033[97m':'\033[31m is required between the identifier and its type in variable declarations. Ensure a colon is placed between the variable name and its type. Expected \033[97m':'\033[31m\033[0m",
-    '(': "\033[31mAn opening parenthesis \033[97m'('\033[31m is missing. Ensure parentheses are used in function calls, print statements, or for grouping expressions. Expected \033[97m'('\033[31m\033[0m",
-    ')': "\033[31mA closing parenthesis \033[97m')'\033[31m is missing. Ensure every opening parenthesis \033[97m'('\033[31m has a corresponding closing parenthesis \033[97m')'\033[31m. Expected \033[97m')'\033[31m\033[0m",
-    '=': "\033[31mThe assignment operator \033[97m'='\033[31m is missing. Use \033[97m'='\033[31m to assign values to variables or expressions. Expected \033[97m'='\033[31m\033[0m",
-    '.': "\033[31mA period \033[97m'.'\033[31m is expected at the end of the program, marking the program's conclusion. Ensure the program ends with a period. Expected \033[97m'.'\033[31m\033[0m",
+    'program': "\033[31mThe \033[97m'program'\033[31m keyword is expected at the beginning of the program block, signifying the start of the program structure. Ensure the program starts with the \033[97m'program'\033[31m keyword.\033[0m",
+    'var': "\033[31mThe \033[97m'var'\033[31m keyword is missing, which is required to start the variable declaration section. Ensure \033[97m'var'\033[31m is used to declare variables.\033[0m",
+    'begin': "\033[31mThe \033[97m'begin'\033[31m keyword is missing, which marks the start of the execution block following the declarations. Ensure the execution section starts with \033[97m'begin'\033[31m.\033[0m",
+    'end': "\033[31mThe \033[97m'end'\033[31m keyword is missing, indicating the termination of the program. Ensure \033[97m'end'\033[31m is used to close the program block.\033[0m",
+    'integer': "\033[31mThe \033[97m'integer'\033[31m keyword is required to specify the data type of the variables being declared. Ensure variables are typed as \033[97m'integer'\033[31m.\033[0m",
+    'print': "\033[31mThe \033[97m'print'\033[31m statement is required to output data to the console. Ensure \033[97m'print'\033[31m is used to display values.\033[0m",
+    ';': "\033[31mA semicolon \033[97m';'\033[31m is expected to terminate the statement. Ensure every statement ends with a semicolon.\033[0m",
+    ',': "\033[31mA comma \033[97m','\033[31m is missing to separate multiple identifiers in a list. Ensure that identifiers are separated by commas in the declaration.\033[0m",
+    ':': "\033[31mA colon \033[97m':'\033[31m is required between the identifier and its type in variable declarations. Ensure a colon is placed between the variable name and its type.\033[0m",
+    '(': "\033[31mAn opening parenthesis \033[97m'('\033[31m is missing. Ensure parentheses are used in function calls, print statements, or for grouping expressions.\033[0m",
+    ')': "\033[31mA closing parenthesis \033[97m')'\033[31m is missing. Ensure every opening parenthesis \033[97m'('\033[31m has a corresponding closing parenthesis \033[97m')'\033[31m.\033[0m",
+    '=': "\033[31mThe assignment operator \033[97m'='\033[31m is missing. Use \033[97m'='\033[31m to assign values to variables or expressions.\033[0m",
+    '.': "\033[31mA period \033[97m'.'\033[31m is expected at the end of the program, marking the program's conclusion. Ensure the program ends with a period.\033[0m",
 }
 
-'''WITHOUT HARDCODED EXPECTED:
-ERROR_MESSAGES = {
-    'program': "\033[31mThe \033[97m'program'\033[31m keyword is expected at the beginning of the program block, signifying the start of the program structure. Ensure the program starts with the \033[97m'program'\033[31m keyword. \033[97m'program'\033[31m\033[0m",
-    'var': "\033[31mThe \033[97m'var'\033[31m keyword is missing, which is required to start the variable declaration section. Ensure \033[97m'var'\033[31m is used to declare variables. \033[97m'var'\033[31m\033[0m",
-    'begin': "\033[31mThe \033[97m'begin'\033[31m keyword is missing, which marks the start of the execution block following the declarations. Ensure the execution section starts with \033[97m'begin'\033[31m. \033[97m'begin'\033[31m\033[0m",
-    'end': "\033[31mThe \033[97m'end'\033[31m keyword is missing, indicating the termination of the program. Ensure \033[97m'end'\033[31m is used to close the program block. \033[97m'end'\033[31m\033[0m",
-    'integer': "\033[31mThe \033[97m'integer'\033[31m keyword is required to specify the data type of the variables being declared. Ensure variables are typed as \033[97m'integer'\033[31m. \033[97m'integer'\033[31m\033[0m",
-    'print': "\033[31mThe \033[97m'print'\033[31m statement is required to output data to the console. Ensure \033[97m'print'\033[31m is used to display values. \033[97m'print'\033[31m\033[0m",
-    ';': "\033[31mA semicolon \033[97m';'\033[31m is expected to terminate the statement. Ensure every statement ends with a semicolon. \033[97m';'\033[31m\033[0m",
-    ',': "\033[31mA comma \033[97m','\033[31m is missing to separate multiple identifiers in a list. Ensure that identifiers are separated by commas in the declaration. \033[97m','\033[31m\033[0m",
-    ':': "\033[31mA colon \033[97m':'\033[31m is required between the identifier and its type in variable declarations. Ensure a colon is placed between the variable name and its type. \033[97m':'\033[31m\033[0m",
-    '(': "\033[31mAn opening parenthesis \033[97m'('\033[31m is missing. Ensure parentheses are used in function calls, print statements, or for grouping expressions. \033[97m'('\033[31m\033[0m",
-    ')': "\033[31mA closing parenthesis \033[97m')'\033[31m is missing. Ensure every opening parenthesis \033[97m'('\033[31m has a corresponding closing parenthesis \033[97m')'\033[31m. \033[97m')'\033[31m\033[0m",
-    '=': "\033[31mThe assignment operator \033[97m'='\033[31m is missing. Use \033[97m'='\033[31m to assign values to variables or expressions. \033[97m'='\033[31m\033[0m",
-    '.': "\033[31mA period \033[97m'.'\033[31m is expected at the end of the program, marking the program's conclusion. Ensure the program ends with a period. \033[97m'.'\033[31m\033[0m",
-}
-'''
+
 
 
 
@@ -219,7 +205,9 @@ def parse(tokens):
             else:
                 
                 expected_message = ERROR_MESSAGES.get(top, f"Expected '{top}'")
-                error(f"{expected_message}, but found '{current_token}'.")
+
+                # Print detailed expected message and the portion of the Expected: ' ', but found  ' ' together.
+                error(f"{expected_message} \033[31mExpected: \033[97m'{top}', \033[31mbut found: \033[97m'{current_token}'.\033[0m")
 
                 # Error recovery: skip the current token
                 index += 1
