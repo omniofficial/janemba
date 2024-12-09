@@ -48,7 +48,7 @@ Create program to check provided grammar. If errors are found, display correspon
     -   Show parsing table (page 7)
     -   Full program files printed, sample run displayed (pages 8 - ?)
 
-## Project Presentation
+## [Project Presentation](/https://docs.google.com/presentation/d/1M_c6-o-KFVf6Jpgd8vFNdLSwECEmiMmrDnKDWoGh2p8/edit?usp=sharing)
 
 ### Non-Technical Explanation
 
