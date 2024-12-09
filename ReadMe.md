@@ -26,7 +26,7 @@ Create program to check provided grammar. If errors are found, display correspon
 
 -   Read content of file and tokenize text. [Y].
 -   Initialize FIRST, FOLLOW, NON_TERMINALS, TERMINALS, and PARSING TABLE. [Y]
--   Parse tokens using a parsing table.
+-   Parse tokens using a parsing table. [Y]
 
 ### Part 4 [COMPLETE?]
 
@@ -52,16 +52,16 @@ Create program to check provided grammar. If errors are found, display correspon
 
 ### Non-Technical Explanation
 
--   Intro page (Y)
--   Brief summary (Y)
--   How to run the program
--   Program files, organization of the project, and guide
+-   Intro page [Y]
+-   Brief summary [Y]
+-   How to run the program [Y]
+-   Program files, organization of the project, and guide [Y]
 
 ### Technical Explanation
 
--   Function analysis
--   How to prepare for the tokenization of input file (removing comment lines, blank, and extra spaces in the provided program)
--   How to translate the prepared text file to our programming language: Python.
--   Explain Part 3 by going line by line
--   Explain our error handling in Part 4
--   Difficulties / Questions...
+-   Function analysis [Y]
+-   How to prepare for the tokenization of input file (removing comment lines, blank, and extra spaces in the provided program) [Y]
+-   How to translate the prepared text file to our programming language: Python. [Y]
+-   Explain Part 3 by going line by line [Y]
+-   Explain our error handling in Part 4 [Y]
+-   Difficulties / Questions... [Y]

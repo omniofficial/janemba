@@ -23,10 +23,8 @@ Authors: Henry Dinh, Adrian Diaz, Aidan Jahn
 
 print_janemba()
 
-
 RESERVED_WORDS = {"program", "var", "begin", "end", "integer", "print"}
 
-# WITHOUT HARDCODED EXPECTED:
 ERROR_MESSAGES = {
     'program': "\033[31mThe \033[97m'program'\033[31m keyword is expected at the beginning of the program block, signifying the start of the program structure. Ensure the program starts with the \033[97m'program'\033[31m keyword.\033[0m",
     'var': "\033[31mThe \033[97m'var'\033[31m keyword is missing, which is required to start the variable declaration section. Ensure \033[97m'var'\033[31m is used to declare variables.\033[0m",
@@ -42,10 +40,6 @@ ERROR_MESSAGES = {
     '=': "\033[31mThe assignment operator \033[97m'='\033[31m is missing. Use \033[97m'='\033[31m to assign values to variables or expressions.\033[0m",
     '.': "\033[31mA period \033[97m'.'\033[31m is expected at the end of the program, marking the program's conclusion. Ensure the program ends with a period.\033[0m",
 }
-
-
-
-
 
 # Tokenizer for blocked text format
 def tokenize_blocked_text(file_path):
@@ -197,13 +191,13 @@ def parse(tokens):
                 else:
                     break
                 continue
+
         elif top in TERMINALS:
             if top == token_type:
                 index += 1
                 if index < len(tokens):
                     current_token = tokens[index]
             else:
-                
                 expected_message = ERROR_MESSAGES.get(top, f"Expected '{top}'")
 
                 # Print detailed expected message and the portion of the Expected: ' ', but found  ' ' together.
@@ -215,6 +209,7 @@ def parse(tokens):
                     current_token = tokens[index]
                 else:
                     break
+                
         elif top in NON_TERMINALS:
             key = (top, token_type)
             if key in PARSING_TABLE:
