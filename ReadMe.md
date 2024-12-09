@@ -28,14 +28,14 @@ Create program to check provided grammar. If errors are found, display correspon
 -   Initialize FIRST, FOLLOW, NON_TERMINALS, TERMINALS, and PARSING TABLE. [Y]
 -   Parse tokens using a parsing table. [Y]
 
-### Part 4 [COMPLETE?]
+### Part 4 [COMPLETE]
 
 -   Add additional functionality to display error messages if given grammar does not compile. [Y]
 -   Generate pre-defined error messages [Y]
 -   Append pre-defined error messages to expected error message. Output result. [Y]
 -   Error messages are descriptive and identifiable using tokens. [Y]
 
-### Part 5 [IN PROGRESS]
+### Part 5 [COMPLETE]
 
 -   Project report
     -   MLA Format [Y]
@@ -50,14 +50,14 @@ Create program to check provided grammar. If errors are found, display correspon
 
 ## [Project Presentation](https://docs.google.com/presentation/d/1M_c6-o-KFVf6Jpgd8vFNdLSwECEmiMmrDnKDWoGh2p8/edit?usp=sharing)
 
-### Non-Technical Explanation
+### Non-Technical Explanation [COMPLETE]
 
 -   Intro page [Y]
 -   Brief summary [Y]
 -   How to run the program [Y]
 -   Program files, organization of the project, and guide [Y]
 
-### Technical Explanation
+### Technical Explanation [COMPLETE]
 
 -   Function analysis [Y]
 -   How to prepare for the tokenization of input file (removing comment lines, blank, and extra spaces in the provided program) [Y]
