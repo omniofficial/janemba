@@ -40,15 +40,15 @@ Create program to check provided grammar. If errors are found, display correspon
 -   Project report
     -   MLA Format [Y]
     -   Cover Page (page 1) [Y]
-    -   Original Program (page 2) [IP]
-    -   Original grammar (page 3) [IP]
-    -   Grammar in BNF - remove all {, }, and | (page 4) [IP]
-    -   Grammar in BNF for predictive parsing, remove left recursion (page 5) [IP]
-    -   List members of first and follow (page 6)
-    -   Show parsing table (page 7)
-    -   Full program files printed, sample run displayed (pages 8 - ?)
+    -   Original Program (page 2) [Y]
+    -   Original grammar (page 3) [Y]
+    -   Grammar in BNF - remove all {, }, and | (page 4) [Y]
+    -   Grammar in BNF for predictive parsing, remove left recursion (page 5) [Y]
+    -   List members of first and follow (page 6) [Y]
+    -   Show parsing table (page 7) [Y]
+    -   Full program files printed, sample run displayed (pages 8 - ?) [Y]
 
-## [Project Presentation](/https://docs.google.com/presentation/d/1M_c6-o-KFVf6Jpgd8vFNdLSwECEmiMmrDnKDWoGh2p8/edit?usp=sharing)
+## [Project Presentation](https://docs.google.com/presentation/d/1M_c6-o-KFVf6Jpgd8vFNdLSwECEmiMmrDnKDWoGh2p8/edit?usp=sharing)
 
 ### Non-Technical Explanation
 
